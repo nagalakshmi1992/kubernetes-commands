@@ -3,3 +3,27 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo echo deb http://apt.kubernetes.io/ kubernetes-xenial main > /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
+
+kubeadm init
+
+
+To start using your cluster, you need to run the following as a regular user:
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  
+  
+  sudo kubectl get nodes
+  
+  
+  kubeadm reset
+  442  apt-get start kubelet
+  443  which kubelet
+  444  /usr/bin/kubelet restart
+  445  kubeadm init
+  
+  sudo kudeadm restart
+  
+  
+  from samir ( Faculty) to All Participants:
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d '\n')"
